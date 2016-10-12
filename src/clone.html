@@ -1,0 +1,45 @@
+<!-- 
+演示在js中的对象克隆
+作者：曹宗颖
+ -->
+
+ <!DOCTYPE>
+<HTML>
+<head>
+<script type="text/javascript">
+// 下面代码参考了stackoverflow
+function clone(obj){
+	if(obj == null || typeof obj !== 'object')
+		return obj;
+
+	var temp = obj.constructor();
+
+	for(var key in obj){
+		if(obj.hasOwnProperty(key))
+		{			
+			temp[key] = clone(obj[key]);
+		}
+	}
+
+	return temp;
+}
+
+var obj = {
+	name:"alan"
+	,todo: [1,2,3]
+}
+
+var obj1 = clone(obj);
+
+obj1.name = "alan1";
+obj1.todo.push(4);
+
+console.log(obj.name != obj1.name);
+// 得到true
+console.log(obj.todo.length != obj1.todo.length);
+// 得到true
+
+	
+</script>
+</head>
+</HTML>
