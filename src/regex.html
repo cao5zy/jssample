@@ -27,6 +27,14 @@
 	console.log(regex.exec("*.##"));
 	// 得到数组：["*.##", ".##", index: 0, input: "*.##"]
 
+	// RegExp的另外一个方法时compile，它允许在不创建新RegExp对象的情况下，在已有的正则对象上重新处理新的正则表达式。
+	var regex1 = new RegExp("h");
+	console.log(regex1.exec("hello alan"));
+	// 得到h
+	regex1.compile("a");
+	console.log(regex1.exec("hello alan"));
+	// 得到a
+
 	
 </script>
 </head>
