@@ -1,0 +1,33 @@
+﻿<!-- 
+演示在js中正则表达式的使用
+作者：曹宗颖
+ -->
+ <!DOCTYPE>
+<HTML>
+<head>
+<script type="text/javascript">
+
+	// 在js中，字符串对象本身就带有正则表达式功能
+	let matched = "*.##".match(/\*(\.\#*)?/);
+	console.log(matched);
+	// 得到数组：["*.##", ".##", index: 0, input: "*.##"]
+	console.log(matched[1]);
+	// 得到捕获的值：.##
+
+	// 如果正则表达式中没有捕获，那么返回的数组的第一个元素就是匹配值
+	let matched1 = "hello".match(/h/);
+	console.log(matched1[0])
+	// 得到h
+
+	// js中的正则表达式通过RegExp对象来实现, 
+	// 如果传入的是字符串，那么正则表达式中的\要写成\\
+	var regex = new RegExp('\\*(\\.\\#*)?');
+	console.log(regex.test("##"));
+	// 得到true
+	console.log(regex.exec("*.##"));
+	// 得到数组：["*.##", ".##", index: 0, input: "*.##"]
+
+	
+</script>
+</head>
+</HTML>
