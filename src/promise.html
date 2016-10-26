@@ -1,0 +1,49 @@
+﻿<!-- 
+演示在js中的promise使用
+作者：曹宗颖
+ -->
+ <!DOCTYPE>
+<HTML>
+<head>
+<script type="text/javascript">
+'use strict'
+
+let async1 = function()
+{
+	return new Promise((resolve, reject)=>{
+		//异步方法
+		setTimeout(()=>{resolve('done1');}, 1000);
+	});
+}
+
+let async2 = function(){
+	return new Promise((resolve, reject)=>{
+		//异步方法
+		setTimeout(()=>{resolve('done2');}, 1000);
+	})
+}
+
+let async3 = function(){
+	return new Promise((resolve, reject)=>{
+		//异步方法
+		setTimeout(()=>{resolve('done3');}, 1000);
+	})
+}
+
+//下面的代码将异步调用按照同步的方式，顺序执行。
+async1()
+.then(ret=>{
+	console.log(ret);
+	return async2();
+})
+.then(ret=>{
+	console.log(ret);
+	return async3();
+})
+.then(ret=>{
+	console.log(ret);
+});
+
+</script>
+</head>
+</HTML>
