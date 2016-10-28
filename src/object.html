@@ -1,0 +1,36 @@
+<!-- 
+演示在js中的对象编程
+作者：曹宗颖
+ -->
+
+ <!DOCTYPE>
+<HTML>
+<head>
+<script type="text/javascript">
+//javascript中对象的创建方式, 参考了typescript编译器生成的javascript
+
+var MyClass = (function(){//这里定义一个函数闭包，防止变量名称污染
+	function MyClass(name){
+		this.name = name;
+	}
+
+	//声明对象的方法
+	MyClass.prototype.doSomething = function(){
+		return 'action from ' + this.name;
+	}
+
+	return MyClass;
+}());
+
+var obj = new MyClass("Alan");//创建对象
+alert(obj.doSomething());
+
+var obj1 = MyClass("Nothing");//这里不能获取任何东西
+alert(obj1.doSomething());//错误信息：object.html:29 Uncaught TypeError: Cannot read property 'doSomething' of undefined(…)
+//说明obj1是undefined
+
+
+	
+</script>
+</head>
+</HTML>
