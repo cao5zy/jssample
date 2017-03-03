@@ -1,0 +1,21 @@
+{
+  "name": "seneca-example",
+  "version": "1.0.0",
+  "description": "how to use seneca to build microservice",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cao5zy/jssample/tree/master/src/seneca"
+  },
+  "keywords": [
+    "seneca-example"
+  ],
+  "author": "alan cao",
+  "license": "MIT",
+  "dependencies": {
+    "seneca": "^3.3.0"
+  }
+}
