@@ -24,3 +24,25 @@ module.exports = function(options){
 	return "Authentication"
 
 }
+
+//UMD方式定义如下：
+(function (global, factory) {
+    if (typeof define === 'function' && define.amd) {
+        define([], factory);
+    } else if (typeof module === 'object' && module.exports) {
+        module.exports = factory();
+    } else {
+        root.returnExports = factory();
+    }
+    }(global, function () {
+
+    	function authenticationService(){
+			this.add({cmd:"auth", subCmd:"login"}, (args, respond)=>{
+	    		respond(null, {result:"OK"});
+	    	});
+    		
+    	}
+
+    	return authenticationService;
+
+}));
