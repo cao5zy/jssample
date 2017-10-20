@@ -1,0 +1,15 @@
+{
+  "name": "currylearning",
+  "version": "1.0.0",
+  "description": "test for curry",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "cao5zy@163.com",
+  "license": "ISC",
+  "dependencies": {
+    "loadash": "0.0.1",
+    "lodash": "^4.17.4"
+  }
+}
