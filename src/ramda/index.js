@@ -29,4 +29,28 @@
         const fn5 = ()=>R.when(()=>false, ()=>'fn5 true')({empty:true});
 
         console.log(fn5());
+
+        data = {name:"hello"};
+        let base = function(d){
+            return (handler)=>{
+                handler(d);
+                return d;
+            }
+        };
+        let log = (d)=>base(d)((d)=>console.log(d));
+        let output = (d)=>console.log('output :', d);
+
+        const fun6 = R.compose(output, log)
+        fun6(data);
+
+        let emptyFun = function(){
+            console.log('empty1');
+        }
+
+        let emptyFun2 = function(){
+            console.log('empty2');
+        }
+
+        let func7 = R.compose(emptyFun, emptyFun2);
+        func7();
 }));
