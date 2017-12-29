@@ -16,7 +16,7 @@
   "author": "alan cao",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.17.0",
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "seneca": "^3.4.3",
     "seneca-web": "^2.2.0",
